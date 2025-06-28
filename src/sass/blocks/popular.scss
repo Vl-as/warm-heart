@@ -1,0 +1,143 @@
+@use "/src/sass/base/variable.scss" as *;
+
+.popular {
+  padding-top: 70px;
+  padding-bottom: 90px;
+  background-color: $color-white;
+
+  &__title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 130%;
+    color: $color-black;
+  }
+
+  &__wrapper {
+    margin-top: 40px;
+  }
+
+  &__card {
+    margin: 0 auto;
+
+    &_2 {
+      display: none;
+    }
+
+    &_3 {
+      display: none;
+    }
+  }
+
+  &__control {
+    margin-top: 40px;
+  }
+
+  &__pagination {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+    &-point {
+      height: 16px;
+      width: 16px;
+      background-color: $color-black;
+      opacity: 0.3;
+      border-radius: 50%;
+
+      &_active {
+        opacity: 0.99;
+      }
+    }
+  }
+
+  &__arrow {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .popular {
+    &__wrapper {
+      display: flex;
+      gap: 20px;
+    }
+
+    &__card {
+      &_2 {
+        display: block;
+      }
+    }
+
+    &__title {
+      font-size: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .popular {
+    padding-top: 90px;
+    padding-bottom: 110px;
+
+    &__title {
+      font-size: 48px;
+    }
+
+    &__wrapper {
+      margin-top: 50px;
+    }
+
+    &__control {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .popular {
+    &__card {
+      &_3 {
+        display: block;
+      }
+    }
+
+    &__pagination{
+        &-point{
+            cursor: pointer;
+            transition: .3s ease-in;
+            &:hover:not(.popular__pagination-point_active){
+                opacity: .7;
+            }
+        }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+  .popular {
+    padding-top: 130px;
+    padding-bottom: 150px;
+
+    &__wrapper {
+      margin-top: 60px;
+    }
+
+    &__control {
+      margin-top: 60px;
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__arrow{
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        transition: .3s ease-in;
+        &:hover{
+            opacity: .7;
+        }
+    }
+  }
+}

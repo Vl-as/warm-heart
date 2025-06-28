@@ -1,0 +1,134 @@
+@use "/src/sass/base/variable.scss" as *;
+
+.card {
+  position: relative;
+  max-width: 320px;
+  aspect-ratio: 0.85 / 1;
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    text-decoration: none;
+  }
+
+  &__frame {
+    background-color: $color-beige;
+    border-radius: 25px;
+    padding: 40px;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    mix-blend-mode: darken;
+  }
+
+  &__title {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    color: $color-black;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__size {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: $color-black;
+  }
+
+  &__price {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: $color-black;
+  }
+
+  &__add {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .card {
+    max-width: 386px;
+
+    &__frame {
+      padding: 50px;
+    }
+
+    &__title {
+      margin-top: 15px;
+      font-size: 24px;
+    }
+
+    &__size {
+      font-size: 21px;
+    }
+
+    &__price {
+      font-size: 21px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .card {
+    position: relative;
+    max-width: 306.5px;
+
+    &__frame {
+      transition: all 0.3s ease-in;
+    }
+
+    &__add {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 5;
+      display: grid;
+      place-items: center;
+      width: 70px;
+      height: 70px;
+      opacity: 0;
+      font-size: 34px;
+      transition: all 0.3s ease-in;
+    }
+
+    &:hover .card__frame {
+      position: relative;
+      padding: 20px;
+      border-radius: 50%;
+      transform: rotate(5deg);
+    }
+
+    &:hover .card__add {
+      border-radius: 50%;
+      opacity: 1;
+      background-color: $color-black;
+      color: $color-white;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+  .card {
+    max-width: 386px;
+
+    &__frame {
+      padding: 60px;
+    }
+
+    &__title {
+      margin-top: 20px;
+    }
+  }
+}

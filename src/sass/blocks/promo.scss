@@ -1,0 +1,257 @@
+@use "/src/sass/base/variable.scss" as *;
+
+.promo {
+  position: relative;
+  padding-top: 146px;
+  background-color: $color-beige;
+
+  &__title {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 130%;
+    color: $color-black;
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: $color-black;
+  }
+
+  &__btn {
+    margin-top: 35px;
+    display: grid;
+    place-items: center;
+    width: 236px;
+    height: 55px;
+    border-radius: 100px;
+    background-color: $color-black;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 140%;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 287px;
+
+    &-black {
+      position: absolute;
+      inset: 0;
+      background-color: $color-black;
+    }
+
+    &-img {
+      position: absolute;
+      inset: 0;
+      background: url(/src/img/promo/bg-slider.png) center / cover;
+    }
+  }
+
+  &__slider {
+    margin-top: 90px;
+    position: relative;
+    padding: 181px 37px 90px 37px;
+  }
+
+  &__frame {
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 174px;
+  }
+
+  &__img{
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__pagination {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+    &-point {
+      height: 16px;
+      width: 16px;
+      background-color: $color-white;
+      opacity: 0.3;
+      border-radius: 50%;
+
+      &_active {
+        opacity: 0.99;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .promo {
+    &__title {
+      font-size: 48px;
+    }
+
+    &__slider {
+      padding: 129px 97px 90px 97px;
+    }
+
+    &__frame {
+      top: -107px;
+      left: auto;
+      right: 11px;
+      transform: none;
+    }
+
+    &__bg {
+      &-img {
+        background: url(/src/img/promo/bg-slider-sm.png) center / cover;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .promo {
+    padding-top: 197px;
+    padding-bottom: 120px;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__container {
+      width: 440px;
+    }
+
+    &__title {
+      font-size: 60px;
+    }
+
+    &__text {
+      margin-top: 30px;
+      font-size: 21px;
+    }
+
+    &__btn {
+      margin-top: 45px;
+      width: 253px;
+      height: 60px;
+      font-size: 21px;
+    }
+
+    &__slider {
+      position: static;
+      padding: 0;
+    }
+
+    &__pagination {
+      margin-top: 30px;
+      flex-direction: column;
+      align-items: end;
+    }
+
+    &__frame {
+      width: 251px;
+      height: 241px;
+      top: auto;
+      right: 106px;
+      bottom: -61px;
+    }
+
+    &__bg {
+      top: 0;
+      left: auto;
+      height: auto;
+      width: 251px;
+      &-img {
+        background-image: url(/src/img/promo/bg-slider-md.png);
+        background-size: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .promo {
+    &__frame {
+      width: 312px;
+      height: 300px;
+      top: 217;
+      right: 110px;
+      bottom: auto;
+
+      &::before{
+        display: block;
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: 10px;
+        height: 108px;
+        width: 108px;
+        background: url(/src/img/promo/decoration-left.svg) center / cover;
+      }
+
+      &::after{
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: -45px;
+        right: 0;
+        height: 108px;
+        width: 108px;
+        background: url(/src/img/promo/decoration-right.svg) center / cover;
+      }
+    }
+
+    &__bg{
+      width: calc(29% + (100vw - 1000px)/4.5);
+    }
+
+    &__pagination {
+      &-point{
+        cursor: pointer;
+        transition: .3s ease-in;
+        &:hover:not(.promo__pagination-point_active){
+          opacity: .7;
+        }
+      }
+    }
+
+    &__btn{
+      transition: .3s ease-in;
+      &:hover{
+        opacity: .8;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: $breakpoint-xl) {
+  .promo {
+    padding-top: 288px;
+    padding-bottom: 211px;
+
+    &__frame {
+      width: 405px;
+      height: 390px;
+      top: 250;
+      right: 160px;
+    }
+
+    &__bg{
+      width: calc(39% + (100vw - 1920px)/8);
+    }
+  }
+}

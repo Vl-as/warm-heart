@@ -1,0 +1,163 @@
+@use "/src/sass/base/variable.scss" as *;
+
+.comfort {
+  padding-top: 70px;
+  padding-bottom: 90px;
+  background-color: $color-black;
+
+  &__title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 130%;
+    color: $color-white;
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 17px;
+    leading-trim: NONE;
+    line-height: 140%;
+    color: $color-white;
+  }
+
+  &__frame {
+    width: 96%;
+    max-width: 343px;
+  }
+
+  &__img {
+    max-width: 100%;
+    transform: rotate(-7deg);
+  }
+
+  &__sideneert {
+    margin-top: 41px;
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+
+    &-title {
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 130%;
+      color: $color-white;
+    }
+  }
+
+  &__btn {
+    margin-top: 35px;
+    display: grid;
+    place-items: center;
+    width: 263px;
+    height: 55px;
+    border-radius: 100px;
+    background-color: $color-white;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 140%;
+    color: $color-black;
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .comfort {
+    &__title {
+      font-size: 40px;
+    }
+
+    &__sideneert {
+      margin-top: 40px;
+      gap: 40px;
+    }
+
+
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .comfort {
+    padding-top: 90px;
+    padding-bottom: 120px;
+
+    &__create {
+      width: 580px;
+    }
+
+    &__title {
+      font-size: 48px;
+    }
+
+    &__text {
+      margin-top: 30px;
+      font-size: 21px;
+    }
+
+    &__sideneert {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 55px;
+      align-items: center;
+
+      &-title {
+        font-size: 36px;
+      }
+    }
+
+    &__frame {
+      max-width: 378px;
+    }
+
+    &__btn {
+      margin-top: 45px;
+      height: 60px;
+      font-size: 21px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .comfort {
+    &__sideneert {
+      gap: 70px;
+      grid-template-columns: 1fr 1.15fr;
+    }
+
+    &__img {
+      transform: rotate(-7deg) translateY(26px);
+    }
+
+    &__btn {
+      transition: 0.3s ease-in;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+    .comfort {
+        padding-top: 170px;
+        padding-bottom: 180px;
+      &__sideneert {
+        grid-template-columns: 382px 382px;
+      }
+  
+      &__img {
+        transform: rotate(-7deg) translateY(0);
+      }
+
+      &__create{
+        width: 335px;
+      }
+  
+      &__wrapper{
+        display: flex;
+        gap: 45px;
+        align-items: center;
+      }
+    }
+  }

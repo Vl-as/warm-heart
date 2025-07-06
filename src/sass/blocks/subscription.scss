@@ -1,0 +1,151 @@
+@use "/src/sass/base/variable.scss" as *;
+
+.subscription {
+  padding-top: 70px;
+  padding-bottom: 90px;
+  background-color: $color-beige;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 130%;
+    color: $color-black;
+  }
+
+  &__description {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: $color-black;
+  }
+
+  &__input {
+    padding-bottom: 16px;
+    width: 100%;
+    max-width: 320px;
+    outline: none;
+    border: none;
+    border-bottom: 4px solid $color-black;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: $color-black;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 140%;
+      color: $color-black;
+      opacity: 0.3;
+    }
+  }
+
+  &__btn {
+    margin-top: 40px;
+    width: 214px;
+    height: 55px;
+    background-color: $color-black;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 140%;
+    color: $color-white;
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .subscription {
+    &__title {
+      font-size: 40px;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .subscription {
+    padding-top: 90px;
+    padding-bottom: 120px;
+
+    &__title {
+      font-size: 48px;
+    }
+
+    &__description {
+      margin-top: 30px;
+      font-size: 21px;
+    }
+
+    &__input {
+      max-width: 450px;
+      font-size: 21px;
+      
+      &::placeholder {
+        font-size: 21px;
+      }
+    }
+
+    &__btn {
+      margin-top: 45px;
+      width: 226px;
+      height: 60px;
+      font-size: 21px;
+    }
+
+    &__wrapper {
+      gap: 50px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .subscription {
+    &__wrapper {
+      display: grid;
+      grid-template-columns: auto 440px;
+      align-items: center;
+      gap: 50px;
+    }
+
+    &__input {
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &__btn {
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+  .subscription {
+    padding-top: 130px;
+    padding-bottom: 140px;
+
+    &__wrapper {
+      grid-template-columns: auto 490px;
+      gap: 53.5px;
+    }
+  }
+}
